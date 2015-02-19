@@ -1,0 +1,35 @@
+<?php
+	if (function_exists('register_sidebar'))
+		register_sidebar (array(
+			'before_widget' => '<div class="widgets">',
+			'after_widget' => '</div>',
+			'before_title' => '<h2>',
+			'after_title' => '</h2>',
+			
+			));
+			
+?>
+
+
+<?php
+	add_theme_support ('post-thumbnails');
+
+?>
+
+<?php
+if ( function_exists( 'add_theme_support' ) ) {
+	add_theme_support( 'post-thumbnails' );
+	set_post_thumbnail_size( 650, 250, true ); // Tamanho da largura das imagens.
+}
+
+?>
+<?php
+
+add_filter('the_content_feed', 'rss_post_thumbnail');
+function rss_post_thumbnail($content) {
+	global $post;
+	if( has_post_thumbnail($post->ID) )
+		$content = '<p>' . get_the_post_thumbnail($post->ID, 'thumbnail') . '</p>' . $content;
+	return $content;
+}
+?>
