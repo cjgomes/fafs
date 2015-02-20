@@ -1,5 +1,13 @@
 <?php
 
+function fafs_menu(){
+  register_nav_menus( array(
+    'primary' => 'Primary Navigation'
+  ));
+}
+
+add_action( 'after_setup_theme', 'fafs_menu' );
+
 	if (function_exists('register_sidebar'))
 		register_sidebar (array(
 			'before_widget' => '<div class="widgets">',
@@ -8,10 +16,6 @@
 			'after_title' => '</h2>',
 			
 			));
-			
-?>
-
-<?php
 
 add_filter('the_content_feed', 'rss_post_thumbnail');
 function rss_post_thumbnail($content) {

@@ -28,7 +28,7 @@
 	<div class="centered_menu">
 		
 			 <?php wp_nav_menu( array( 
-'theme_location' 	=> 'home',
+'theme_location' 	=> 'primary',
 'menu' 				=> 'Home',
 'container'			=> 'div',
 'container_class'	=> 'main-navigation',

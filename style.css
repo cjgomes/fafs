@@ -12,6 +12,7 @@ Version: 1.0
 * {
 	margin:0;
 	padding:0;
+	font-family: Tahoma, Arial, Helvetica, sans-serif;
 }
 .logo {
 	overflow: hidden;
@@ -23,9 +24,9 @@ Version: 1.0
 	max-width: 87%;
 }
 .partlogo{
-float:right;
-overflow:hidden;
-height:130px;
+    float:right;
+    overflow:hidden;
+    height:130px;
 }
 
 .container {
@@ -70,7 +71,7 @@ height:130px;
 	height: 30px;
 }
 	
-.navigation{
+.navigationigation{
 	width: 100%;
 	margin: auto;
 	padding-top: 5px;
@@ -85,24 +86,71 @@ height:130px;
 	margin: 0 auto;
 }
 
-li {
-	list-style-type:none;
-	display:inline;
-	padding-left:15px;
-	padding-right:15px;	
-	
+/* navigation CSS */
+
+.navigation {
+    font-size: 1.2em;
+    display:block;
+    z-index:100;
 }
 
-li  a {
-	font-family: Tahoma, Arial, Helvetica, sans-serif;
-	font-size:15px;
-	color:#0B2C62;
-	text-decoration:none;
+.navigation, .navigation ul {
+    list-style: none;
+    padding: 0;
 }
-li a: hover {
-	color: #000000;
-	text-decoration: underline;
-}	
+
+.navigation, .navigation > li {
+    position:relative;
+    display:inline-block;
+}
+.navigation li a {
+    display: block;
+    padding: 5px 20px;
+    line-height: 25px;
+    text-decoration: none;
+    color: #0B2C62;
+}
+
+.navigation li a:hover {
+    color:#565656;
+}
+
+.navigation > li:hover > a {
+    -webkit-transition: background 0.4s ease-out;
+    transition: background 0.4s ease-out;
+}
+.navigation > li.current-menu-item:first-child > a {
+	color: #565656;
+	background: none;
+}
+.navigation > li.current-menu-item:first-child > a:hover {
+	-webkit-transition: background 0.4s ease-out;
+	transition: background 0.4s ease-out;
+	color:#565656;
+}
+.navigation li.current-menu-item a {
+    color:#565656;
+}
+.navigation ul {
+    position: absolute;
+    display: block;
+    z-index: 999;
+    text-indent: 0;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.3);
+}
+
+.navigation ul li a {
+    background: white;
+    color:#0B2C62;
+    font-size:80% !important;
+    white-space:nowrap;
+}
+
+.navigation > ul li a:hover {
+    background: #982d27; /* Mint Dark */
+}
+	
+/* end navigation */
 
 .content {
 	position:relative;
@@ -273,18 +321,67 @@ li a: hover {
 	position: relative;
 	margin-bottom: 15px;
 }
-.slide {height: 290px; width: 900px; background: #ebebeb;}
-.slide img {display: block; float: left; height: 290px; position: relative; top: -20px; left: -30px;}
-.slide .post {padding: 20px 20px 0 0;}
-.slide .post a {color: #565656;}
-.slide .post h2 {margin-bottom: 0.5em;}
-.slide .post h2, .slide .post h2 a {line-height:1.5; color: #565656; font-size:119%; font-weight: normal; text-decoration: none;}
-.slide .post h2 a:hover {text-decoration: none; color:#777;}
-.slide .post-content, .slide.post-content p {margin-bottom: 15px; color: #333; line-height:1.5;}
-.slide .post-date {font-size:80%; margin-bottom:0.8em;color:#333;}
+.slide {
+    height: 290px; 
+    width: 900px; 
+    background: #ebebeb;
+}
+.slide img {
+    display: block; 
+    float: left; 
+    height: 290px; 
+    position: relative; 
+    top: -20px; 
+    left: -30px;
+}
+.slide .post {
+    padding: 20px 20px 0 0;
+}
+.slide .post a {
+    color: #565656;
+}
+.slide .post h2 {
+    margin-bottom: 0.5em;
+}
+.slide .post h2, .slide .post h2 a {
+    line-height:1.5; 
+    color: #565656; 
+    font-size:119%; 
+    font-weight: normal; 
+    text-decoration: none;
+}
+.slide .post h2 a:hover {
+    text-decoration: none; 
+    color:#777;}
+.slide .post-content, .slide.post-content p {
+    margin-bottom: 15px; 
+    color: #333; 
+    line-height:1.5;
+}
+.slide .post-date {
+    font-size:80%; 
+    margin-bottom:0.8em;
+    color:#333;
+}
 
-#larr, #rarr {display: block; width: 32px; height: 53px; position: absolute; top: 135px !important; opacity: 0.2; z-index: 99 !important;}
-#larr {background: #243C80 url("img/larr.png") 8px 50% no-repeat; left: 0 !important;}
-#rarr {background: #243C80 url("img/rarr.png") 11px 50% no-repeat; right: 0 !important;}
-#larr:hover, #rarr:hover {opacity: 1;}
+#larr, #rarr {
+    display: block; 
+    width: 32px; 
+    height: 53px; 
+    position: absolute; 
+    top: 135px !important; 
+    opacity: 0.2; 
+    z-index: 99 !important;
+}
+#larr {
+    background: #243C80 url("img/larr.png") 8px 50% no-repeat; 
+    left: 0 !important;
+}
+#rarr {
+    background: #243C80 url("img/rarr.png") 11px 50% no-repeat; 
+    right: 0 !important;
+}
+#larr:hover, #rarr:hover {
+    opacity: 1;
+}
 
