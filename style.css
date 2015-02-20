@@ -89,7 +89,6 @@ Version: 1.0
 /* navigation CSS */
 
 .navigation {
-    font-size: 1.2em;
     display:block;
     z-index:100;
 }
