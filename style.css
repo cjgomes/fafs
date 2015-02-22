@@ -132,12 +132,13 @@ Version: 1.0
 }
 .navigation ul {
     position: absolute;
-    display: block;
     z-index: 999;
     text-indent: 0;
     box-shadow: 0 1px 6px rgba(0,0,0,0.3);
 }
-
+.navigation ul.sub-menu {
+display:none;
+}
 .navigation ul li a {
     background: white;
     color:#0B2C62;
