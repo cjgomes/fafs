@@ -160,19 +160,29 @@ jQuery.noConflict();
         $('.rpthumb:last, .comment:last').css('border-bottom','none');
 
     })
-    
 
-  $(document).ready(function () { 
-    $('.navigation li').hover(
-      function () {
-      //show its submenu
-        $('ul', this).stop().slideDown(100);
-      }, 
-      function () {
-      //hide its submenu
-        $('ul', this).stop().slideUp(100); 
-      }
-    );
-  });
+$(document).ready(function () { 
+   $('.navigation li').hover(
+     function () {
+     //show its submenu
+       $('ul', this).stop().slideDown(100);
+     }, 
+     function () {
+     //hide its submenu
+       $('ul', this).stop().slideUp(100); 
+     }
+   );
+ });
     
+jQuery(document).ready(function ($) {
+        //Ações dos icones 
+        $('.masc').click(function () {
+            $('#camp-fem').css('display','none');
+            $('#camp-masc').fadeIn('slow');
+        });
+        $('.fem').click(function () {
+            $('#camp-masc').css('display','none');
+            $('#camp-fem').fadeIn('slow');
+        });
+});
 })(jQuery)

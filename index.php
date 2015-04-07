@@ -4,30 +4,35 @@
 <div class="container">
 <div class="left_container">
 
-<?php
+<?php if ( have_posts() ) : ?>
 
-	if (have_posts()) : while (have_posts()) : the_post ();
-?>
+    <div id="loop" class="<?php if ($_COOKIE['mode'] == 'grid') echo 'grid'; else echo 'list'; ?> clear">
 
+    <?php while ( have_posts() ) : the_post(); ?>
 
-<a href="<?php the_permalink ();?>" id="title"><h1> <?php the_title(); ?>  </h1></a>
-<div class="content"><div class="thumbnail"><?php the_post_thumbnail (array(198,198));?></div> <?php the_excerpt(); ?><br /><br /><br /><br />Continuar lendo <?php the_permalink (); ?><br /><br />
-Publicado por  <?php the_author () ?> - <?php the_date("d/m/Y");?> às <?php the_time("g.i a");?></div>
-<div class="info"></div>
-<br />
- 
-<?php
-	endwhile;
-	else: 
-?> 
-<p> Nenhum post encontrado! <p>
-<?php
+        <div <?php post_class('post clear'); ?> id="post-<?php the_ID(); ?>">
+            <?php if ( has_post_thumbnail() ) :?>
+            <a href="<?php the_permalink() ?>" class="thumb"><?php the_post_thumbnail('thumbnail', array(
+                        'title'	=> trim(strip_tags( $post->post_title )),
+                        'alt'	=> trim(strip_tags( $post->post_title )),
+                    )); ?></a>
+            <?php endif; ?>
 
-	endif;
-?>
+             <!--<div class="post-category"><?php the_category(' / '); ?></div>-->
+            <h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
+
+            <div class="post-meta">Publicado em <span
+                        class="post-date"><?php the_time(__('j/M/Y')) ?></span> </br></br>
+            </div>
+            <div class="post-content"><?php if (function_exists('smart_excerpt')) smart_excerpt(get_the_excerpt(), 55); ?></div>
+        </div>
+    <?php endwhile; ?>
+	
+    </div>
+	
+<?php endif; ?>
 
 </div>
-<div class="right_container"><?php get_sidebar (); ?> </div>
 </div>
 
 <div style="clear:both;"></div>

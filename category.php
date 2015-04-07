@@ -16,7 +16,7 @@ single_cat_title ('');
 ?>
 <a href="<?php the_permalink ();?>" id="title"><h1> <?php the_title(); ?>  </h1></a>
 <div class="content"><div class="thumbnail"><?php the_post_thumbnail (array(198,198));?></div> <?php the_excerpt(); ?><br /><br /><br /><br />Continuar lendo <?php the_permalink (); ?><br /><br />
-Publicado por  <?php the_author () ?> - <?php the_date("d/m/Y");?> às <?php the_time("g.i a");?> - <?php comments_number("Nenhum comentário","1 comentário","% comentários");?></div>
+Publicado em <?php the_date("d/m/Y");?> às <?php the_time("g.i a");?> - <?php comments_number("Nenhum comentário","1 comentário","% comentários");?></div>
 <div class="info"></div>
 <br />
  

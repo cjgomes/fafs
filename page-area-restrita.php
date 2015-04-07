@@ -1,6 +1,9 @@
-
-<?php get_header (); ?>
-
+<?php
+/**
+ *Template Name: Página da Área Restrita 
+**/
+get_header();
+?>
 
 <div class= "blog_container"
 <?php
@@ -9,7 +12,7 @@
 	
 ?>
 <div class="single_container">
-<h1> <?php the_title(); ?>  </h1></a>
+<h1> <?php the_title(); ?>  </h1>
 <hr color="#243C80"/><br /><br />
 <?php the_content();?> <br /><hr color="#243C80"/>  
 </div> 

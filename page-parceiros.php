@@ -1,17 +1,24 @@
+<?php
+/**
+ *Template Name: Página de parceiros
+**/
+get_header();
+?>
 
-<?php get_header (); ?>
-
-
-<div class= "blog_container"
+<div class= "blog_container">
 <?php
 
 	if (have_posts()) : while (have_posts()) : the_post ();
 	
 ?>
 <div class="single_container">
-<h1> <?php the_title(); ?>  </h1></a>
+<h1> <?php the_title(); ?>  </h1>
 <hr color="#243C80"/><br /><br />
-<?php the_content();?> <br /><hr color="#243C80"/>  
+<?php the_content();?> 
+
+
+
+<br /><hr color="#243C80"/>  
 </div> 
 
 <br /> 
