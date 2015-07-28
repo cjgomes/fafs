@@ -8,7 +8,7 @@ get_header();
 
 <?php if ( have_posts() ) : ?>
 
-    <div id="loop" class="<?php if ($_COOKIE['mode'] == 'grid') echo 'grid'; else echo 'list'; ?> clear">
+    <div id="loop" class="clear">
 
     <?php while ( have_posts() ) : the_post(); ?>
 

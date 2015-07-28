@@ -13,6 +13,7 @@ get_header();
     </ul>
     <div class="clearfix"></div>
     <div id="camp-masc">
+	<div class="text-nipe">Competições do nipe Masculino</div>
     <?php wp_nav_menu( array( 
 'theme_location' 	=> 'Campeonatos-M',
 'menu' 				=> 'Campeonato',
@@ -22,6 +23,7 @@ get_header();
     </div>
     
     <div id="camp-fem">
+	<div class="text-nipe">Competições do nipe Feminino</div>
     <?php wp_nav_menu( array( 
 'theme_location' 	=> 'Campeonatos-F',
 'menu' 				=> 'Campeonato',
@@ -30,7 +32,9 @@ get_header();
 'menu_class'		=> 'camp')); ?>
     </div>
     
+	<div class="article"><?php the_content(); ?></div><hr color="#243C80"/>
 </div>
+ 
 
 <div style="clear:both;"></div>
 

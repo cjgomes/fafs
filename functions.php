@@ -414,6 +414,46 @@ function next_posts_attributes(){
 }
 add_filter('next_posts_link_attributes', 'next_posts_attributes');
 
+
+
+/** pagina de login  ***/
+function custom_login_css ( )  {
+ 
+echo  '<link rel="stylesheet" type="text/css" href = "' . get_stylesheet_directory_uri ( ) . '/ login / login-styles.css "/>' ;
+ 
+ }
+ 
+add_action ( 'login_head' , 'custom_login_css' ) ;
+
+function custom_fonts() {
+ 
+echo '<link href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700" rel="stylesheet" type="text/css">';
+ 
+} ?>
+ 
+<?php add_action('login_head', 'custom_fonts');
+
+add_action( 'login_head', 'untame_fadein',30);
+ 
+function untame_fadein() {
+ 
+echo '<script type="text/javascript">// <![CDATA[
+ 
+jQuery(document).ready(function() { jQuery("#loginform,#nav,#backtoblog").css("display", "none");          jQuery("#loginform,#nav,#backtoblog").fadeIn(3500);
+ 
+});
+ 
+// ]]></script>';
+ 
+}
 ?>
+<?php
+add_filter( 'login_headerurl', 'custom_login_header_url' );
+ 
+function custom_login_header_url($url) {
+ 
+return 'http://futsalamazonas.com.br/'; 
+ 
+}?><span style="font-family: Georgia, 'Times New Roman', 'Bitstream Charter', Times, serif;font-size: 13px;line-height: 19px"> </span>
 
 

@@ -6,7 +6,7 @@
 
 <?php if ( have_posts() ) : ?>
 
-    <div id="loop" class="<?php if ($_COOKIE['mode'] == 'grid') echo 'grid'; else echo 'list'; ?> clear">
+    <div id="loop" class="clear">
 
     <?php while ( have_posts() ) : the_post(); ?>
 
@@ -27,7 +27,15 @@
             <div class="post-content"><?php if (function_exists('smart_excerpt')) smart_excerpt(get_the_excerpt(), 55); ?></div>
         </div>
     <?php endwhile; ?>
-	
+    <?php if (get_option('paging_mode') == 'default') : ?>
+    <div class="pagination">
+        <div class="previouspostslink"><?php previous_posts_link(__('Postagens Recentes')); ?></div>
+        <?php next_posts_link(__('Postagens Antigas')); ?>
+        <?php if (function_exists('wp_pagenavi')) wp_pagenavi(); ?>
+    </div>
+    <?php else : ?>
+    <div id="pagination"><?php next_posts_link(__('Mostrar Mais')); ?></div>
+<?php endif; ?>
     </div>
 	
 <?php endif; ?>

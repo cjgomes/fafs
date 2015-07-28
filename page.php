@@ -1,32 +1,30 @@
+<?php get_header(); ?>
 
-<?php get_header (); ?>
+<div class="blog_container">
 
+    <?php if ( have_posts() ) : ?>
+        <?php while ( have_posts() ) : the_post(); ?>
 
-<div class= "blog_container"
-<?php
+		<div class="single_container">
+        <div class="background content">
+            <div <?php post_class('content article-content clear'); ?> id="post_<?php the_ID(); ?>">
+                <div class="meta">
+                    <h1><?php the_title(); ?></h1><hr color="#243C80"/></br>                
+                </div>
+                        
+                <div class="article"><?php the_content(); ?></div><hr color="#243C80"/>  
 
-	if (have_posts()) : while (have_posts()) : the_post ();
-	
-?>
-<div class="single_container">
-<h1> <?php the_title(); ?>  </h1></a>
-<hr color="#243C80"/><br /><br />
-<?php the_content();?> <br /><hr color="#243C80"/>  
-</div> 
+                <div class="article-footer"><?php the_tags(__('<strong>Tags: </strong>'), ', '); ?></div>
+            </div>
 
-<br /> 
- 
-<?php
-	endwhile;
-	else: 
-?> 
+        </div>
+	</div>
+
+        <?php endwhile; 
+		else: ?>
+		
 <p> Nenhum post encontrado! <p>
-<?php
-
-	endif;
-?>
+    <?php endif; ?>
 </div>
 
-<div style="clear:both;"></div>
-
-<?php get_footer (); ?>
+<?php get_footer(); ?>
